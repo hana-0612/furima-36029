@@ -11,9 +11,7 @@
 | last_name          | string  | null: false |
 | kana_first_name    | string  | null: false |
 | kana_last_name     | string  | null: false |
-| birth_year         | integer | null: false |
-| birth_month        | integer | null: false |
-| birth_day          | integer | null: false |
+| birthday           | integer | null: false |
 
 ### Association
 
@@ -22,19 +20,17 @@
 
 ## products テーブル
 
-| Column              | Type       | Options                        |
-| ------------------- | ---------- | ------------------------------ |
-| image               |            |                                |
-| title               | string     | null: false                    |
-| product_description | text       | null: false                    |
-| category_id         | integer    | null: false                    |
-| product_condition   | text       | null: false                    |
-| shipping_charges_id | integer    | null: false                    |
-| shipping_area_id    | integer    | null: false                    |
-| shipping_ship_id    | integer    | null: false                    |
-| price               | integer    | null: false                    |
-| user                | references | null: false, foreign_key: true |
-| purchase_record     | references | null: false, foreign_key: true |
+| Column               | Type       | Options                        |
+| -------------------- | ---------- | ------------------------------ |
+| title                | string     | null: false                    |
+| product_description  | text       | null: false                    |
+| category_id          | integer    | null: false                    |
+| product_condition_id | integer    | null: false                    |
+| shipping_charges_id  | integer    | null: false                    |
+| shipping_area_id     | integer    | null: false                    |
+| shipping_ship_id     | integer    | null: false                    |
+| price                | integer    | null: false                    |
+| user                 | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -47,7 +43,6 @@
 | ------- | ---------- | ------------------------------ |
 | user    | references | null: false, foreign_key: true |
 | product | references | null: false, foreign_key: true |
-| address | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -61,9 +56,10 @@
 | --------------- | ---------- | ------------------------------ |
 | postal_code     | string     | null: false                    |
 | prefecture_id   | integer    | null: false                    |
-| city            | string     |                                |
-| house_number    | string     |                                |
+| city            | string     | null: false                    |
+| house_number    | string     | null: false                    |
 | building_name   | string     |                                |
+| tell            | integer    | null: falise                   | 
 | purchase_record | references | null: false, foreign_key: true |
 
 ### Association
