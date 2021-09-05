@@ -4,14 +4,14 @@
 
 | Column             | Type    | Options                   |
 | ------------------ | ------- | ------------------------- |
-| nickname           | string  | null: false, unique: true |
+| nickname           | string  | null: false,              |
 | email              | string  | null: false, unique: true |
 | encrypted_password | string  | null: false               |
 | first_name         | string  | null: false               |
 | last_name          | string  | null: false               |
 | kana_first_name    | string  | null: false               |
 | kana_last_name     | string  | null: false               |
-| date_of_birth      | integer | null: false               |
+| date_of_birth      | date    | null: false               |
 
 ### Association
 
@@ -26,7 +26,7 @@
 | product_description  | text       | null: false                    |
 | category_id          | integer    | null: false                    |
 | product_condition_id | integer    | null: false                    |
-| shipping_charges_id  | integer    | null: false                    |
+| shipping_charge_id   | integer    | null: false                    |
 | shipping_area_id     | integer    | null: false                    |
 | shipping_ship_id     | integer    | null: false                    |
 | price                | integer    | null: false                    |
