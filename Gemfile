@@ -58,3 +58,5 @@ group :development do
 end
 
 gem 'nokogiri', '>= 1.12.4'
+
+gem 'devise'
