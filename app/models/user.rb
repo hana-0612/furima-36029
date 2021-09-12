@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   with_options presence: true do
+    validates :nickname
     validates :date_of_birth
     with_options format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/} do
       validates :last_name
