@@ -18,15 +18,7 @@ class User < ApplicationRecord
     end
   end
 
-<<<<<<< HEAD
-<<<<<<< HEAD
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
   validates_format_of :password, with: PASSWORD_REGEX
-=======
-  validates :password, format:{with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]/}
->>>>>>> parent of 6edebe4 (パスワード半角英数字混合必須設定)
-=======
-  validates :password, format:{with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]/}
->>>>>>> parent of 6edebe4 (パスワード半角英数字混合必須設定)
 
 end
