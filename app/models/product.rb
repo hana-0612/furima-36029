@@ -11,6 +11,7 @@ class Product < ApplicationRecord
     validates :shipping_area_id
     validates :shipping_ship_id
     validates :price
+    validates :image
   end
 
 end
