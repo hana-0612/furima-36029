@@ -14,7 +14,7 @@ RSpec.describe Product, type: :model do
         @product = FactoryBot.create(:user)
         expect(@product).to be_valid
       end
-    end  
+    end
 
     context '出品登録がうまくいかないとき' do
       it 'imageが空では登録されない' do
@@ -36,37 +36,37 @@ RSpec.describe Product, type: :model do
       end
 
       it 'カテゴリーが空では登録できない' do
-        @product.category_id= nil
+        @product.category_id = nil
         @product.valid?
         expect(@product.errors.full_messages).to include "Category can't be blank"
       end
 
       it '商品の状態が空では登録できない' do
-        @product.product_condition_id= nil
+        @product.product_condition_id = nil
         @product.valid?
         expect(@product.errors.full_messages).to include "Product condition can't be blank"
       end
 
       it '配送料の負担が空では登録できない' do
-        @product.shipping_charge_id= nil
+        @product.shipping_charge_id = nil
         @product.valid?
         expect(@product.errors.full_messages).to include "Shipping charge can't be blank"
       end
 
       it '配送元の地域が空では登録できない' do
-        @product.shipping_area_id= nil
+        @product.shipping_area_id = nil
         @product.valid?
         expect(@product.errors.full_messages).to include "Shipping area can't be blank"
       end
 
       it '発送までの日数が空では登録できない' do
-        @product.shipping_ship_id= nil
+        @product.shipping_ship_id = nil
         @product.valid?
         expect(@product.errors.full_messages).to include "Shipping ship can't be blank"
       end
 
       it '販売価格が空では登録できない' do
-        @product.price= ''
+        @product.price = ''
         @product.valid?
         expect(@product.errors.full_messages).to include "Price can't be blank"
       end
@@ -74,11 +74,15 @@ RSpec.describe Product, type: :model do
       it 'プルダウンが"---"では登録できない' do
         @product.category_id = '1'
         @product.product_condition_id = '1'
-        @product.shipping_charge_id = '1' 
+        @product.shipping_charge_id = '1'
         @product.shipping_area_id = '1'
         @product.shipping_ship_id = '1'
         @product.valid?
-        expect(@product.errors.full_messages).to include("Category must be other than 1", "Product condition must be other than 1", "Shipping charge must be other than 1", "Shipping area must be other than 1", "Shipping ship must be other than 1")
+        expect(@product.errors.full_messages).to include('Category must be other than 1',
+                                                         'Product condition must be other than 1',
+                                                         'Shipping charge must be other than 1',
+                                                         'Shipping area must be other than 1',
+                                                         'Shipping ship must be other than 1')
       end
 
       it '販売価格が英字のみでは登録できない' do
