@@ -10,10 +10,6 @@ RSpec.describe Product, type: :model do
       it '全ての項目が正しく入力されてあれば登録できる' do
         expect(@product).to be_valid
       end
-      it 'ログイン状態のユーザーのみ、商品出品ページへ遷移できること' do
-        @product = FactoryBot.create(:user)
-        expect(@product).to be_valid
-      end
     end
 
     context '出品登録がうまくいかないとき' do
