@@ -70,31 +70,31 @@ RSpec.describe Product, type: :model do
       it 'カテゴリーのプルダウンが"---"では登録できない' do
         @product.category_id = '1'
         @product.valid?
-        expect(@product.errors.full_messages).to include"Category must be other than 1"
+        expect(@product.errors.full_messages).to include 'Category must be other than 1'
       end
 
       it '商品の状態が"---"では登録できない' do
         @product.product_condition_id = '1'
         @product.valid?
-        expect(@product.errors.full_messages).to include"Product condition must be other than 1"
+        expect(@product.errors.full_messages).to include 'Product condition must be other than 1'
       end
 
       it '配送料の負担が"---"では登録できない' do
         @product.shipping_charge_id = '1'
         @product.valid?
-        expect(@product.errors.full_messages).to include"Shipping charge must be other than 1"
+        expect(@product.errors.full_messages).to include 'Shipping charge must be other than 1'
       end
 
       it '配送元の地域が"---"では登録できない' do
         @product.shipping_area_id = '1'
         @product.valid?
-        expect(@product.errors.full_messages).to include"Shipping area must be other than 1"
+        expect(@product.errors.full_messages).to include 'Shipping area must be other than 1'
       end
 
       it '発送までの日数が"---"では登録できない' do
         @product.shipping_ship_id = '1'
         @product.valid?
-        expect(@product.errors.full_messages).to include"Shipping ship must be other than 1"
+        expect(@product.errors.full_messages).to include 'Shipping ship must be other than 1'
       end
 
       it '販売価格が英字のみでは登録できない' do
