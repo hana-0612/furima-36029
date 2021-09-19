@@ -61,7 +61,8 @@ group :development do
 end
 
 gem 'nokogiri', '>= 1.12.4'
-
 gem 'devise'
-
 gem 'pry-rails'
+gem 'mini_magick'
+gem 'image_processing', '~> 1.2'
+gem 'active_hash'
