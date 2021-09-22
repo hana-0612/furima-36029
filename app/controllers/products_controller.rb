@@ -40,7 +40,7 @@ class ProductsController < ApplicationController
       @product.destroy
       redirect_to root_path(@product.id)
     else
-      render :edit
+      redirect_to root_path
     end
   end
 
