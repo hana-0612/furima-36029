@@ -7,6 +7,7 @@ class Product < ApplicationRecord
   belongs_to_active_hash :shipping_charge
   belongs_to_active_hash :shipping_area
   belongs_to_active_hash :shipping_ship
+  has_one    :purchase_record
 
   with_options presence: true do
     validates :title, :product_description, :image
