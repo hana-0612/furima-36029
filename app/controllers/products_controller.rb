@@ -24,7 +24,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    redirect_to products_path unless current_user.id == @product.user_id
+    redirect_to products_path unless current_user.id == @product.user_id && @product.purchase_record.nil?
   end
 
   def update
