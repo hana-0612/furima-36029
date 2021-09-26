@@ -3,7 +3,7 @@ class PurchaseRecordsController < ApplicationController
   before_action :product_find
 
   def index
-    if current_user.id != @product.user_id && @product.purchase_record == nil
+    if current_user.id != @product.user_id && @product.purchase_record.nil?
       @purchase_address = PurchaseAddress.new
     else
       redirect_to root_path
@@ -15,7 +15,7 @@ class PurchaseRecordsController < ApplicationController
     if @purchase_address.valid?
       pay_item
       @purchase_address.save
-      return redirect_to root_path
+      redirect_to root_path
     else
       render action: :index
     end
@@ -36,7 +36,7 @@ class PurchaseRecordsController < ApplicationController
   end
 
   def pay_item
-    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+    Payjp.api_key = ENV['PAYJP_SECRET_KEY']
     Payjp::Charge.create(
       amount: @product.price,
       card: purchase_record_params[:token],
