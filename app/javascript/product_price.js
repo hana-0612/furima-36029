@@ -1,6 +1,6 @@
 function product_price() {
   const productPrice = document.getElementById("item-price");
-    productPrice.addEventListener('change', () => {
+    productPrice.addEventListener('input', () => {
       const price = productPrice.value;
       const addTaxPrice = document.getElementById("add-tax-price");
       const profit = document.getElementById("profit");
